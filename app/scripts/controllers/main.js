@@ -1,8 +1,13 @@
 'use strict';
 
 angular.module('myTodoApp')
-  .controller('MainCtrl', function ($scope) {
-      $scope.todos = [];
+  .controller('MainCtrl', function ($scope, localStorageService) {
+      var todosInStorage = localStorageService.get('todos');
+      $scope.todos = todosInStorage || [];
+
+      $scope.$watch('todos', function(){
+        localStorageService.set('todos', $scope.todos);
+      }, true);
 
       $scope.addTodo = function(){
         var myTodo = $scope.todo;
