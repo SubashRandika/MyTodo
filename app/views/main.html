@@ -1,6 +1,25 @@
-<div class="container">
-  <h2>My Todos</h2>
-  <p class="form-group" ng-repeat="todo in todos">
-    <input type="text" class="form-control" ng-model="todo"/>
-  </p>
+<!-- Success and Failure Todo creation alerts -->
+<div class="alert alert-success" role="alert" ng-show="isSuccess">
+    Your Todo is successfully added...
 </div>
+<div class="alert alert-danger" role="alert" ng-show="isfail">
+    Please enter what you need to be done...
+</div>
+
+<h2>My Todos</h2>
+
+<!-- Todos input -->
+<form role="form" ng-submit="addTodo()">
+  <div class="row">
+    <div class="input-group">
+      <input class="form-control" type="text" placeholder="What needs to be done?" ng-model="todo"/>
+      <span class="input-group-btn">
+        <input class="btn btn-primary" type="submit" value="Add">
+      </span>
+    </div>
+  </div>
+</form>
+<hr>
+<p class="form-group" ng-repeat="todo in todos">
+  <input type="text" class="form-control" ng-model="todo"/>
+</p>
