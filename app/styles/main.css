@@ -80,3 +80,8 @@ body {
     border-bottom: 0;
   }
 }
+
+.moveable{
+  padding: 5px 10px;
+  cursor: move;
+}

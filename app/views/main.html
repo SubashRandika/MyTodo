@@ -22,9 +22,12 @@
 
 <hr>
 
-<p class="input-group" ng-repeat="todo in todos">
-  <input type="text" class="form-control" ng-model="todo"/>
-  <span class="input-group-btn">
-    <button class="btn btn-danger" aria-label="Remove" ng-click="removeTodo($index)">X</button>
-  </span>
-</p>
+<!-- Todos List -->
+<div ui-sortable ng-model="todos">
+  <p class="input-group moveable" ng-repeat="todo in todos">
+    <input type="text" class="form-control" ng-model="todo"/>
+    <span class="input-group-btn">
+      <button class="btn btn-danger" aria-label="Remove" ng-click="removeTodo($index)">X</button>
+    </span>
+  </p>
+</div>
