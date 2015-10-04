@@ -13,12 +13,12 @@ angular.module('myTodoApp')
             $scope.isSuccess = true;
             $scope.successMsg = 'Your Todo is successfully added...';
             $scope.isfail = false;
-            autoCloseAlert('alert-success', 3000);
+            autoCloseAlert('.alert-success', 3000);
         } else {
             $scope.isSuccess = false;
             $scope.isfail = true;
             $scope.failMsg = 'Please enter what you need to be done...';
-            autoCloseAlert('alert-danger', 3000);
+            autoCloseAlert('.alert-danger', 3000);
         }
 
       };
@@ -27,13 +27,13 @@ angular.module('myTodoApp')
         $scope.todos.splice(index, 1);
         $scope.isSuccess = true;
         $scope.successMsg = 'Todo is successfully deleted...';
-        autoCloseAlert('alert-success', 3000);
+        autoCloseAlert('.alert-success', 3000);
       };
 
       var autoCloseAlert = function(selector, delay){
-          $('.' + selector).fadeIn(1000, 'linear', function(){
+          $(selector).fadeIn(1000, 'linear', function(){
             window.setTimeout(function(){
-              $('.' + selector).fadeOut(1000, 'linear');
+              $(selector).fadeOut(1000, 'linear');
             }, delay);
           });
       };
