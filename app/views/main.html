@@ -1,9 +1,9 @@
 <!-- Success and Failure Todo creation alerts -->
 <div class="alert alert-success" role="alert" ng-show="isSuccess">
-    Your Todo is successfully added...
+    {{ successMsg }}
 </div>
 <div class="alert alert-danger" role="alert" ng-show="isfail">
-    Please enter what you need to be done...
+    {{ failMsg }}
 </div>
 
 <h2>My Todos</h2>
@@ -19,7 +19,12 @@
     </div>
   </div>
 </form>
+
 <hr>
-<p class="form-group" ng-repeat="todo in todos">
+
+<p class="input-group" ng-repeat="todo in todos">
   <input type="text" class="form-control" ng-model="todo"/>
+  <span class="input-group-btn">
+    <button class="btn btn-danger" aria-label="Remove" ng-click="removeTodo($index)">X</button>
+  </span>
 </p>
